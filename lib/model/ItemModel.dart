@@ -5,15 +5,22 @@ class ItemModel {
   String itemName;
   String imageUrl;
   String itemStockStatus;
+  String itemSalePrice;
 
-  ItemModel({this.itemId, this.itemName, this.imageUrl, this.itemStockStatus});
+  ItemModel(
+      {this.itemId,
+      this.itemName,
+      this.imageUrl,
+      this.itemStockStatus,
+      this.itemSalePrice});
 
   factory ItemModel.fromJson(Map<String, dynamic> json) {
     return ItemModel(
         itemId: json["itemId"],
         itemName: json["itemName"],
         imageUrl: BASE_URL + json["itemImagePath"] + json["itemImage"],
-        itemStockStatus: json["itemStockStatus"]);
+        itemStockStatus: json["itemStockStatus"],
+        itemSalePrice: json["itemSalePrice"]);
   }
 }
 

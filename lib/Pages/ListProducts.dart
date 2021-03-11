@@ -83,7 +83,7 @@ class _ListProductsState extends State<ListProducts> {
               : ListView.builder(
                   itemBuilder: (context, index) {
                     return Container(
-                      height: 100,
+                      height: 120,
                       margin:
                           EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       padding: EdgeInsets.all(10),
@@ -102,6 +102,7 @@ class _ListProductsState extends State<ListProducts> {
                                   items[index].itemName,
                                   textAlign: TextAlign.center,
                                 ),
+                                Text("Rs. ${items[index].itemSalePrice}"),
                                 InkWell(
                                   onTap: () {
                                     changeStatus(items[index]);
@@ -114,7 +115,7 @@ class _ListProductsState extends State<ListProducts> {
                                         : Colors.red,
                                     child: Text(items[index].itemStockStatus),
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           )

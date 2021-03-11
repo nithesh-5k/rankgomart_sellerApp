@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:seller_app/Pages/ListProducts.dart';
 import 'package:seller_app/Pages/Orders.dart';
 import 'package:seller_app/const.dart';
+import 'package:seller_app/getData.dart';
 import 'package:seller_app/provider/SellerDetails.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -21,6 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   Future<void> checkLogin() async {
+    await Data.getAPIData();
     if (await Provider.of<SellerDetails>(context, listen: false).checkLogin()) {
       Future.delayed(Duration(seconds: 2), () {
         setState(() {
